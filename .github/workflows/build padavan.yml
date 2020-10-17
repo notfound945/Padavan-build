@@ -40,9 +40,10 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
     - name: Build Firmware
       env:
-        TNAME: n56ub1_full
+        TNAME: NEWIFI3
       run: |
         cd /opt/rt-n56u/trunk
+        ls /opt/rt-n56u/trunk/configs/templates/
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
